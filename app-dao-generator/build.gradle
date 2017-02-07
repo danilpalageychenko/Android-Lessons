@@ -1,0 +1,16 @@
+project(':app-dao-generator') {
+    apply plugin: 'application'
+    apply plugin: 'java'
+
+    mainClassName = "com.example.Main"
+
+    def outputDir = "../app/src/main/java/"
+    dependencies {
+        compile fileTree(dir: 'libs', include: ['*.jar'])
+        compile('de.greenrobot:greendao-generator:2.1.0')
+    }
+
+    run {
+        args outputDir
+    }
+}
